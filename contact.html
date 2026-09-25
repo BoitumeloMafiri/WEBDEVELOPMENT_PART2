@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!--
+  Maintenance Essentials - Contact Page (contact.html)
+  WEDE5020 Part 2
+  Boitumelo Mafiri
+  ST10106738
+  This page gives visitors every way to reach the business: contact
+  details, both physical branch locations, and a message form.
+-->
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <!-- Makes the page responsive on mobile devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+    content="Contact Maintenance Essentials. Visit our Braamfontein or Sandton branch in Johannesburg, or send us a message.">
+
+  <title>Maintenance Essentials | Contact</title>
+
+  <!-- Links the external stylesheet that controls how every page looks -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- Website Header -->
+  <header class="site-header">
+    <img src="images/ST10106738_logo.jpg" alt="Maintenance Essentials logo" class="logo">
+    <h1>Contact Us</h1>
+  </header>
+
+  <!-- Website Navigation -->
+  <nav class="site-nav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="enquiry.html">Enquiry</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- Main Page Content -->
+  <main>
+
+    <!-- Direct contact details for visitors who would rather call or message -->
+    <section class="contact-details">
+      <h2>Get in touch</h2>
+      <p>Email: hello@maintenanceessentials.co.za</p>
+      <p>Phone: 011 000 0000</p>
+      <p>WhatsApp: 060 000 0000</p>
+    </section>
+
+    <!-- Both branch locations, each with its address and opening hours -->
+    <section class="locations">
+      <h2>Our locations</h2>
+
+      <article class="location">
+        <h3>Braamfontein branch</h3>
+        <p>78 Juta Street, Braamfontein, Johannesburg, 2001</p>
+        <p>Open: Monday to Saturday, 09:00 &ndash; 18:00</p>
+      </article>
+
+      <article class="location">
+        <h3>Sandton branch</h3>
+        <p>15 Rivonia Road, Sandton, Johannesburg, 2196</p>
+        <p>Open: Monday to Saturday, 09:00 &ndash; 18:00</p>
+      </article>
+
+      <!-- Opening hours note shown under the two branches -->
+      <p class="hours-note">
+        Walk-ins are welcome, but booking ahead through our
+        <a href="enquiry.html">enquiry page</a> means a shorter wait.
+      </p>
+    </section>
+
+    <!-- General message form for questions that are not bookings -->
+    <section class="form-section">
+      <h2>Send us a message</h2>
+      <form action="#" method="post" class="enquiry-form">
+        <p>
+          <label for="c-name">Full name:</label><br>
+          <input type="text" id="c-name" name="c-name" placeholder="Your full name" required>
+        </p>
+        <p>
+          <label for="c-email">Email address:</label><br>
+          <input type="email" id="c-email" name="c-email" placeholder="you@example.com" required>
+        </p>
+        <p>
+          <label for="c-message">Message:</label><br>
+          <textarea id="c-message" name="c-message" rows="4" placeholder="How can we help?" required></textarea>
+        </p>
+        <p>
+          <input type="submit" value="Send message" class="button">
+        </p>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- Website Footer -->
+  <footer class="site-footer">
+    <p>Maintenance Essentials &middot; Johannesburg, South Africa</p>
+    <p>Email: hello@maintenanceessentials.co.za &middot; Phone: 011 000 0000</p>
+    <p>&copy; 2026 Maintenance Essentials. All rights reserved.</p>
+  </footer>
+
+</body>
+
+</html>
