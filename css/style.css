@@ -455,3 +455,70 @@ section {
   background-color: var(--charcoal);
   transform: translateY(0);
 }
+
+/* ==========================================================================
+   7. PSEUDO-CLASSES
+   These style an element based on what the user is doing with it:
+   :hover  = the mouse is over it
+   :focus  = it is selected, usually by clicking or pressing Tab
+   :active = it is being clicked right now
+   ========================================================================== */
+
+/* Navigation links lift slightly and get a soft white background on hover */
+.site-nav a:hover {
+  background-color: rgba(255, 255, 255, 0.22);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+/* The hidden underline grows out to full width when hovered */
+.site-nav a:hover::after {
+  transform: scaleX(1);
+}
+
+/* A visible outline when tabbing through, which helps keyboard users */
+.site-nav a:focus {
+  outline: 3px solid var(--pink-lightest);
+  outline-offset: 2px;
+}
+
+.site-nav a:active {
+  background-color: var(--pink-mid);
+}
+
+/* Body links underline on hover so it is obvious they are clickable */
+a:hover {
+  text-decoration: underline;
+}
+
+/* Buttons darken and lift slightly on hover */
+.button:hover {
+  background-color: var(--pink);
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+.button:focus {
+  outline: 3px solid var(--pink-mid);
+  outline-offset: 2px;
+}
+
+/* Pressing the button pushes it back down, so it feels like a real button */
+.button:active {
+  transform: translateY(0);
+  background-color: var(--charcoal);
+}
+
+/* Cards lift off the page when hovered */
+.provider-preview:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+/* The form field being typed in is highlighted in pink */
+.enquiry-form input:focus,
+.enquiry-form textarea:focus {
+  outline: none;
+  border-color: var(--pink-dark);
+  box-shadow: 0 0 0 3px var(--pink-lightest);
+}
