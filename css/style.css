@@ -522,3 +522,149 @@ a:hover {
   border-color: var(--pink-dark);
   box-shadow: 0 0 0 3px var(--pink-lightest);
 }
+/* ==========================================================================
+   8. RESPONSIVE DESIGN
+   Media queries apply different styles at different screen widths.
+   The site is built for desktop first, then adjusted down for tablet
+   and mobile so it stays usable on any device.
+   ========================================================================== */
+
+/* --- TABLET: screens 768px wide and below --- */
+@media screen and (max-width: 768px) {
+
+  /* Text is scaled down so headings do not dominate a smaller screen */
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  /* Less padding means more room for the actual content */
+  main {
+    padding: 1.5rem 0.75rem;
+  }
+
+  section {
+    padding: 1.5rem;
+  }
+
+  /* Featured providers drop from three columns to two */
+  .featured {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Shorter images so more content fits on a tablet screen */
+  .provider-preview img {
+    height: 180px;
+  }
+
+  .work-gallery img {
+    height: 170px;
+  }
+
+  .hero-image {
+    max-height: 320px;
+  }
+
+  .logo {
+    width: 260px;
+  }
+}
+
+
+/* --- MOBILE: screens 480px wide and below --- */
+@media screen and (max-width: 480px) {
+
+  /* Smaller base text size so more words fit on a narrow screen */
+  body {
+    font-size: 0.95rem;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+    letter-spacing: 0;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  h3 {
+    font-size: 1.15rem;
+  }
+
+  /* Everything becomes a single column, stacked down the page */
+  .featured,
+  .work-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  /* The navigation stacks into a vertical list that is easy to tap */
+  .site-nav {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.25rem;
+    position: static;
+    /* not sticky, so it does not eat the screen */
+  }
+
+  .site-nav a {
+    text-align: center;
+    padding: 0.75rem;
+    /* bigger tap target for fingers */
+    border-radius: var(--radius);
+  }
+
+  /* The sliding underline is a mouse effect, so it is hidden on touch screens */
+  .site-nav a::after {
+    display: none;
+  }
+
+  /* Tighter spacing throughout */
+  main {
+    padding: var(--space) 0.5rem;
+  }
+
+  section {
+    padding: var(--space);
+  }
+
+  .provider-card {
+    padding: var(--space);
+  }
+
+  .site-header {
+    padding: 1.5rem 0.75rem 1rem;
+  }
+
+  /* Images shrink again on mobile so users are not scrolling past
+       one huge picture before reaching the text */
+  .provider-preview img {
+    height: 160px;
+  }
+
+  .work-gallery img {
+    height: 160px;
+  }
+
+  .hero-image {
+    max-height: 220px;
+  }
+
+  .about-image {
+    max-height: 220px;
+  }
+
+  .logo {
+    width: 220px;
+  }
+
+  /* Buttons go full width so they are easy to tap */
+  .button {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+}
