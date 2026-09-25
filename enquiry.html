@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<!--
+  Maintenance Essentials - Enquiry Page (enquiry.html)
+  WEDE5020 Part 2
+  Boitumelo Mafiri
+  ST10106738
+  This page holds two forms: one for clients who want to book a provider,
+  and one for beauty providers who want to be listed on the platform.
+-->
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <!-- Makes the page responsive on mobile devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+    content="Book a trusted beauty provider in Johannesburg, or register your salon to be listed on Maintenance Essentials.">
+
+  <title>Maintenance Essentials | Enquiry</title>
+
+  <!-- Links the external stylesheet that controls how every page looks -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- Website Header -->
+  <header class="site-header">
+    <img src="images/ST10106738_logo.jpg" alt="Maintenance Essentials logo" class="logo">
+    <h1>Make an Enquiry</h1>
+  </header>
+
+  <!-- Website Navigation -->
+  <nav class="site-nav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="enquiry.html">Enquiry</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- Main Page Content -->
+  <main>
+
+    <!-- Client booking form: how a visitor requests an appointment with a provider -->
+    <section class="form-section">
+      <h2>Book your maintenance</h2>
+      <p>Fill in the form below to enquire about a booking with one of our providers.</p>
+
+      <!--
+              action="#" means the form does not send anywhere yet. A back-end
+              will be added in a later phase. The "required" attribute stops the
+              form submitting until the important fields are filled in.
+            -->
+      <form action="#" method="post" class="enquiry-form">
+        <p>
+          <label for="name">Full name:</label><br>
+          <input type="text" id="name" name="name" placeholder="Your full name" required>
+        </p>
+        <p>
+          <label for="email">Email address:</label><br>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required>
+        </p>
+        <p>
+          <label for="service">Service needed:</label><br>
+          <input type="text" id="service" name="service" placeholder="Nails, hair or lashes" required>
+        </p>
+        <p>
+          <label for="date">Preferred date:</label><br>
+          <input type="date" id="date" name="date" required>
+        </p>
+        <p>
+          <label for="message">Message:</label><br>
+          <textarea id="message" name="message" rows="4" placeholder="Tell us what you are looking for"></textarea>
+        </p>
+        <p>
+          <input type="submit" value="Send enquiry" class="button">
+        </p>
+      </form>
+    </section>
+
+    <!-- Provider sign-up form: this is how paid provider listings are requested -->
+    <section class="form-section">
+      <h2>Are you a beauty provider? Get listed</h2>
+      <p>
+        Salons and independent technicians in Johannesburg can join Maintenance Essentials and reach more clients.
+        This is especially useful if you do not yet have your own website.
+      </p>
+
+      <form action="#" method="post" class="enquiry-form">
+        <p>
+          <label for="business">Business name:</label><br>
+          <input type="text" id="business" name="business" placeholder="Your salon or studio name" required>
+        </p>
+        <p>
+          <label for="provider-email">Email address:</label><br>
+          <input type="email" id="provider-email" name="provider-email" placeholder="you@example.com" required>
+        </p>
+        <p>
+          <label for="offer">Services you offer:</label><br>
+          <input type="text" id="offer" name="offer" placeholder="For example: gel nails and nail art" required>
+        </p>
+        <p>
+          <input type="submit" value="Request a listing" class="button">
+        </p>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- Website Footer -->
+  <footer class="site-footer">
+    <p>Maintenance Essentials &middot; Johannesburg, South Africa</p>
+    <p>Email: hello@maintenanceessentials.co.za &middot; Phone: 011 000 0000</p>
+    <p>&copy; 2026 Maintenance Essentials. All rights reserved.</p>
+  </footer>
+
+</body>
+
+</html>
