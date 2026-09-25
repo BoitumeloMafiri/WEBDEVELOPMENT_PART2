@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<!--
+  Maintenance Essentials - Home Page (index.html)
+  WEDE5020 Part 2 
+  Boitumelo Mafiri
+  ST10106738 
+  This is the landing page. It introduces the brand, explains what
+  "Maintenance Week" is, and shows three featured providers that link
+  through to the Services page.
+-->
+<html lang="en">
+
+<head>
+  <!-- Sets the character set so special characters like &amp; display correctly -->
+  <meta charset="UTF-8">
+
+  <!-- Makes the page responsive on mobile devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Short summary of the page, used by search engines in results -->
+  <meta name="description"
+    content="Maintenance Essentials helps young women in Johannesburg find, compare and book trusted nail, hair and lash providers.">
+
+  <title>Maintenance Essentials | Home</title>
+
+  <!-- Links the external stylesheet that controls how every page looks -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- Website Header: shows the logo and brand name on every page -->
+  <header class="site-header">
+    <img src="images/ST10106738_logo.jpg" alt="Maintenance Essentials logo" class="logo">
+    <!-- The logo image above already shows the brand name, so this h1 is
+             hidden visually but kept for screen readers and search engines -->
+    <h1 class="visually-hidden">Maintenance Essentials</h1>
+    <p class="tagline">
+      The &ldquo;pretty girl&rdquo; maintenance brand find, compare and book your monthly
+      beauty maintenance in Johannesburg.
+    </p>
+  </header>
+
+  <!-- Website Navigation: the same five links appear on every page so users never get lost -->
+  <nav class="site-nav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="enquiry.html">Enquiry</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- Main Page Content: everything unique to this page sits inside main -->
+  <main>
+
+    <!-- Hero section: the first thing a visitor sees, explaining the Maintenance Week idea -->
+    <section class="hero">
+      <h2>Every first week of the month is Maintenance Week</h2>
+
+      <!-- figure groups the image with its caption so they belong together -->
+      <figure>
+        <img src="images/ST10106738_image_3.jpg" alt="Young women getting their nails and hair done" class="hero-image">
+        <figcaption>Maintenance Week: nails, hair and lashes, all sorted in one week.</figcaption>
+      </figure>
+
+      <p>
+        Looking and feeling good is part of how we show up each month. Maintenance Essentials is built
+        around &ldquo;Maintenance Week&rdquo; the first week of every month set aside for nails,
+        hair and lashes.
+      </p>
+      <p>
+        Instead of scrolling TikTok for hours or gambling on a random salon, you can discover trusted salons
+        and nail techs in Johannesburg, see their real work, their prices and their wait times, all in one place.
+      </p>
+
+      <!-- Call to action button that sends the visitor to the Services page -->
+      <p><a href="services.html" class="button">Browse our trusted providers</a></p>
+    </section>
+
+    <!-- Explains the problem the business solves, to build trust before they browse -->
+    <section class="why-us">
+      <h2>Why Maintenance Essentials?</h2>
+      <p>
+        We already use TikTok to research where to get our nails done, but it can take hours to find somewhere
+        we actually trust. Maintenance Essentials does the legwork: every provider is vetted, and you can compare
+        their work, prices and wait times before you book. It is Pinterest meets TikTok, for your monthly maintenance.
+      </p>
+    </section>
+
+    <!-- Featured providers: each provider is an article so it can be styled as a card in CSS -->
+    <section class="featured">
+      <h2>Featured providers</h2>
+
+      <article class="provider-preview">
+        <a href="services.html">
+          <img src="images/ST10106738_image_2.jpg" alt="Gel nail work by Glossed and Co">
+        </a>
+        <h3>Glossed &amp; Co Nails</h3>
+        <p>Gel overlays and nail art. From R250 &middot; Wait: 45 min &middot; Rating: 4.8/5</p>
+      </article>
+
+      <article class="provider-preview">
+        <a href="services.html">
+          <img src="images/ST10106738_image_10.jpg" alt="Hair installation by Crown Culture">
+        </a>
+        <h3>Crown Culture Hair</h3>
+        <p>Hair installations and styling. From R400 &middot; Wait: 90 min &middot; Rating: 4.7/5</p>
+      </article>
+
+      <article class="provider-preview">
+        <a href="services.html">
+          <img src="images/ST10106738_image_6.jpg" alt="Lash work by Lash Lounge JHB">
+        </a>
+        <h3>Lash Lounge JHB</h3>
+        <p>Classic and volume lashes. From R300 &middot; Wait: 60 min &middot; Rating: 4.9/5</p>
+      </article>
+    </section>
+
+  </main>
+
+  <!-- Website Footer: contact details and copyright, repeated on every page -->
+  <footer class="site-footer">
+    <p>Maintenance Essentials &middot; Johannesburg, South Africa</p>
+    <p>Email: hello@maintenanceessentials.co.za &middot; Phone: 011 000 0000</p>
+    <p>&copy; 2026 Maintenance Essentials. All rights reserved.</p>
+  </footer>
+
+</body>
+
+</html>
