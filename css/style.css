@@ -178,3 +178,280 @@ figcaption {
   text-align: center;
   margin-top: 0.5rem;
 }
+/* ==========================================================================
+   5. LAYOUT
+   Flexbox is used for the header, navigation and footer because those
+   arrange items in a single line. CSS Grid is used for the card layouts
+   because those need rows and columns.
+   ========================================================================== */
+
+/* --- Header --- */
+.site-header {
+  background-color: var(--white);
+  text-align: center;
+  padding: 2rem var(--space) 1.5rem;
+  border-bottom: 3px solid var(--pink-light);
+}
+
+/* The logo image. auto height keeps it in proportion at any width. */
+.logo {
+  width: 320px;
+  max-width: 80%;
+  height: auto;
+  margin: 0 auto 0.75rem;
+}
+
+.tagline {
+  color: var(--grey);
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* --- Navigation --- */
+/* Flexbox lays the five links out in a row and spaces them evenly */
+/* A soft pink gradient bar instead of one flat colour, so the menu
+   feels like part of the brand rather than a plain strip. */
+.site-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  /* links drop to a new line if space runs out */
+  gap: 0.4rem;
+  background: linear-gradient(90deg, var(--pink) 0%, var(--pink-dark) 100%);
+  padding: 0.85rem var(--space);
+  position: sticky;
+  /* the menu stays visible while scrolling */
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 10px rgba(251, 111, 146, 0.3);
+}
+
+/* Each link is a rounded pill shape. position: relative is needed so the
+   little underline in ::after can be positioned inside it. */
+.site-nav a {
+  position: relative;
+  color: var(--white);
+  font-size: 0.95rem;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 0.55rem 1.3rem;
+  border-radius: 999px;
+  /* 999px gives a full pill shape */
+  /* transition makes the hover effect fade in smoothly instead of snapping */
+  transition: background-color 0.25s ease, color 0.25s ease, transform 0.2s ease;
+}
+
+/* A small white line that sits hidden under each link, ready to appear
+   on hover. scaleX(0) means it starts with zero width. */
+.site-nav a::after {
+  content: "";
+  position: absolute;
+  left: 25%;
+  bottom: 4px;
+  width: 50%;
+  height: 2px;
+  background-color: var(--white);
+  border-radius: 2px;
+  transform: scaleX(0);
+  transition: transform 0.25s ease;
+}
+
+/* --- Footer --- */
+.site-footer {
+  background-color: var(--charcoal);
+  color: var(--pink-light);
+  text-align: center;
+  padding: 2rem var(--space);
+  margin-top: 3rem;
+  font-size: 0.9rem;
+}
+
+.site-footer p {
+  margin-bottom: 0.3rem;
+}
+
+
+/* ==========================================================================
+   6. COMPONENTS
+   The reusable pieces: sections, provider cards, galleries, buttons
+   and forms.
+   ========================================================================== */
+
+/* Every section sits on a white panel so it stands out from the pink page */
+section {
+  background-color: var(--white);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* --- Home page featured providers --- */
+/* Grid creates three equal columns that automatically become fewer
+   columns on smaller screens because of the minmax() value */
+.featured {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+/* The heading must span the full width of the grid, not sit in one column */
+.featured h2 {
+  grid-column: 1 / -1;
+}
+
+.provider-preview {
+  background-color: var(--pink-lightest);
+  padding: var(--space);
+  border-radius: var(--radius);
+  text-align: center;
+  border: 1px solid var(--pink-light);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Fixed heights with object-fit keep every card image the same size and
+   stop tall photos stretching a card. This is what guarantees images
+   never appear too big, whatever size the original file is. */
+.provider-preview img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  /* crops neatly instead of squashing */
+  margin-bottom: 0.75rem;
+}
+
+/* The large hero image on the home page */
+.hero-image {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+}
+
+/* The story image on the About page */
+.about-image {
+  width: 100%;
+  max-height: 380px;
+  object-fit: cover;
+}
+
+
+/* --- Services page provider cards --- */
+.provider-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.provider-card {
+  background-color: var(--pink-lightest);
+  border: 1px solid var(--pink-light);
+  border-left: 6px solid var(--pink-dark);
+  /* pink accent bar on the left */
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+.provider-logo {
+  width: 90px;
+  margin-bottom: 0.75rem;
+}
+
+/* The two work photos sit side by side, and wrap on narrow screens */
+.work-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space);
+  margin-bottom: var(--space);
+}
+
+.work-gallery img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* --- Contact page locations --- */
+/* Short note under the branch list, where the map used to be */
+.hours-note {
+  background-color: var(--pink-lightest);
+  border-left: 4px solid var(--pink-dark);
+  border-radius: var(--radius);
+  padding: var(--space);
+  font-style: italic;
+  color: var(--grey);
+  margin-top: var(--space);
+}
+
+.locations .location {
+  background-color: var(--pink-lightest);
+  padding: var(--space);
+  border-radius: var(--radius);
+  margin-bottom: var(--space);
+  border-left: 4px solid var(--pink);
+}
+
+/* --- Buttons --- */
+.button {
+  display: inline-block;
+  background-color: var(--pink-dark);
+  color: var(--white);
+  font-family: 'Poppins', Arial, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 0.7rem 1.6rem;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.15s ease;
+}
+
+/* --- Forms --- */
+.enquiry-form label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--charcoal);
+}
+
+.enquiry-form input,
+.enquiry-form textarea {
+  width: 100%;
+  /* % keeps inputs responsive on any screen */
+  max-width: 480px;
+  font-family: 'Poppins', Arial, sans-serif;
+  font-size: 1rem;
+  padding: 0.65rem;
+  margin-top: 0.3rem;
+  border: 1px solid var(--pink-mid);
+  border-radius: var(--radius);
+  background-color: var(--white);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* The submit button is an <input>, so the form input rules above would
+   override the .button colours (they are more specific). These lines put
+   the pink button styling back on it. */
+.enquiry-form input[type="submit"] {
+  width: auto;
+  background-color: var(--pink-dark);
+  color: var(--white);
+  font-weight: 600;
+  letter-spacing: 1px;
+  border: none;
+  padding: 0.7rem 1.6rem;
+  cursor: pointer;
+}
+
+.enquiry-form input[type="submit"]:hover {
+  background-color: var(--pink);
+  transform: translateY(-2px);
+}
+
+.enquiry-form input[type="submit"]:active {
+  background-color: var(--charcoal);
+  transform: translateY(0);
+}
