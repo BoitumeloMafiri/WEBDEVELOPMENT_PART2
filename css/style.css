@@ -1,0 +1,180 @@
+/* ==========================================================================
+   Maintenance Essentials - Main Stylesheet (css/style.css)
+   WEDE5020 Part 2
+   Boitumelo Mafiri
+   ST10106738
+
+   This one stylesheet controls how all five pages look. It is linked in
+   the <head> of every page, so any change here updates the whole website.
+
+   CONTENTS
+   1. CSS Reset            - clears browser defaults
+   2. Variables            - stores the brand colours in one place
+   3. Base styles          - default font, colour and spacing
+   4. Typography           - headings, paragraphs and links
+   5. Layout               - header, navigation, main, footer
+   6. Components           - cards, galleries, buttons, forms
+   7. Pseudo-classes       - hover, focus and active states
+   8. Responsive design    - tablet and mobile breakpoints
+   ========================================================================== */
+
+
+/* Loads the two brand fonts from Google Fonts before anything else */
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&family=Poppins:wght@300;400;600&display=swap');
+
+
+/* ==========================================================================
+   1. CSS RESET
+   Browsers add their own margins and padding, and each browser uses
+   slightly different amounts. Clearing them first means the website
+   looks the same in Chrome, Edge and Safari.
+   ========================================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  /* border-box makes padding count inside an element's width,
+       which stops boxes overflowing their container */
+  box-sizing: border-box;
+}
+
+
+/* ==========================================================================
+   2. VARIABLES
+   The brand colours are stored once here. Writing var(--pink-dark)
+   instead of the hex code means one change updates the whole site.
+   These are the exact colours chosen in the website proposal.
+   ========================================================================== */
+
+:root {
+  --pink-lightest: #FFE5EC;
+  --pink-light: #FFC2D1;
+  --pink-mid: #FFB3C6;
+  --pink: #FF8FAB;
+  --pink-dark: #FB6F92;
+  --charcoal: #2E2E2E;
+  --grey: #6E6E6E;
+  --white: #FFFFFF;
+
+  /* Spacing and shape values kept consistent across the site */
+  --space: 1rem;
+  --radius: 12px;
+  --shadow: 0 2px 8px rgba(251, 111, 146, 0.15);
+}
+
+
+/* ==========================================================================
+   3. BASE STYLES
+   The default look of the whole website. Everything inherits from here
+   unless a more specific rule overrides it. This is the "cascading"
+   part of CSS working for us.
+   ========================================================================== */
+
+body {
+  /* Poppins is the body font, with safe fallbacks if it fails to load */
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  /* rem is relative, so text scales properly */
+  font-weight: 300;
+  line-height: 1.7;
+  /* space between lines, for easy reading */
+  color: var(--charcoal);
+  background-color: var(--pink-lightest);
+}
+
+/* Images never spill outside their container, and keep their proportions.
+   This single rule is what stops images appearing too big. */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius);
+}
+
+/* Hides text from the screen but keeps it readable by screen readers and
+   search engines. Used on the home page, where the logo image already
+   shows the brand name, so the h1 would look repeated if it was visible.
+   The h1 still exists in the HTML, which matters for accessibility. */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* Keeps the content in a readable column instead of stretching edge to edge */
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem var(--space);
+}
+
+
+/* ==========================================================================
+   4. TYPOGRAPHY
+   EB Garamond (a serif) for headings gives the elegant beauty-brand feel.
+   Poppins (a sans-serif) for body text keeps it clean and readable.
+   ========================================================================== */
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'EB Garamond', Georgia, 'Times New Roman', serif;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--charcoal);
+}
+
+h1 {
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+}
+
+h2 {
+  font-size: 1.9rem;
+  color: var(--pink-dark);
+  margin-bottom: 0.75rem;
+}
+
+h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.4rem;
+}
+
+h4 {
+  font-size: 1.1rem;
+  margin: 1rem 0 0.4rem;
+  color: var(--grey);
+  /* Small capitals make these sub-headings feel like labels */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+}
+
+p {
+  margin-bottom: 0.9rem;
+}
+
+a {
+  color: var(--pink-dark);
+  text-decoration: none;
+}
+
+/* Client reviews, styled with a pink bar down the left side */
+blockquote {
+  font-style: italic;
+  color: var(--grey);
+  border-left: 3px solid var(--pink);
+  padding-left: var(--space);
+  margin: 0.5rem 0;
+}
+
+figcaption {
+  font-size: 0.85rem;
+  color: var(--grey);
+  text-align: center;
+  margin-top: 0.5rem;
+}
